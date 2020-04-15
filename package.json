@@ -1,0 +1,36 @@
+{
+  "name": "sennen-backend-coding-test",
+  "version": "1.0.0",
+  "description": "Coding exercise",
+  "private": true,
+  "main": "dist/app.js",
+  "scripts": {
+    "build": "tsc",
+    "dev": "nodemon -e ts --exec \"npm run start\"",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx --fix",
+    "start": "tsc && node dist/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robinv85/sennen-backend-coding-test.git"
+  },
+  "keywords": [
+    "JavaScript",
+    "TypeScript",
+    "Node.js"
+  ],
+  "author": "Robin Venneman",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/robinv85/sennen-backend-coding-test/issues"
+  },
+  "homepage": "https://github.com/robinv85/sennen-backend-coding-test#readme",
+  "devDependencies": {
+    "@types/node": "^13.11.1",
+    "@typescript-eslint/eslint-plugin": "^2.28.0",
+    "@typescript-eslint/parser": "^2.28.0",
+    "eslint": "^6.8.0",
+    "typescript": "^3.8.3"
+  }
+}
