@@ -9,7 +9,7 @@ class Latitude {
         this.value = value;
     }
     toString() {
-        return this.value.toString();
+        return `${this.value}`;
     }
 }
 exports.default = Latitude;

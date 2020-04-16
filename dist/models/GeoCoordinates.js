@@ -17,7 +17,7 @@ class GeoCoordinates {
         };
     }
     toString() {
-        return `{ lat: ${this.lat.toString()}, long: ${this.long.toString()} }`;
+        return `{ lat: ${this.lat}, long: ${this.long} }`;
     }
 }
 exports.default = GeoCoordinates;

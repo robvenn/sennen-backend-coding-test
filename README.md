@@ -17,6 +17,7 @@ Consider:
 * Well named, readable code
 * Think about what might be extended or changed in future.
 * Use ramda if you wish, implement some functional programming techniques
-* Handle errors properly*Use typescript if you are familiar with it
+* Handle errors properly
+* Use typescript if you are familiar with it
 
 Please submit your test in the form of a link to a public git repository (github / bitbucket etc)

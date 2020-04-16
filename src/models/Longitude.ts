@@ -7,7 +7,7 @@ export default class Longitude {
     static readonly MIN = LONGITUDE_MIN_VALUE;
     static readonly MAX = LONGITUDE_MAX_VALUE;
 
-    private value: number;
+    readonly value: number;
 
     constructor(value: number) {
         validateNumberBetween(value, LONGITUDE_MIN_VALUE, LONGITUDE_MAX_VALUE);
@@ -15,6 +15,6 @@ export default class Longitude {
     }
 
     toString(): string {
-        return this.value.toString();
+        return `${this.value}`;
     }
 }

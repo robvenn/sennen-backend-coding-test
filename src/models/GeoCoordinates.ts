@@ -1,7 +1,7 @@
 import Latitude from './Latitude';
 import Longitude from './Longitude';
 
-type Coords = {
+export type Coords = {
     lat: Latitude;
     long: Longitude;
 };
@@ -23,6 +23,6 @@ export default class GeoCoordinates {
     }
 
     public toString(): string {
-        return `{ lat: ${this.lat.toString()}, long: ${this.long.toString()} }`;
+        return `{ lat: ${this.lat}, long: ${this.long} }`;
     }
 }

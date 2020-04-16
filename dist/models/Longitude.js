@@ -9,7 +9,7 @@ class Longitude {
         this.value = value;
     }
     toString() {
-        return this.value.toString();
+        return `${this.value}`;
     }
 }
 exports.default = Longitude;

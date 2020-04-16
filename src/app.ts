@@ -1,8 +1,23 @@
-import { generateRandomGeoCoordinates } from './utils/geoCoordinates';
+import async from 'async';
 
-const NUMBER_OF_SETS_OF_COORDS = 100;
-const coordsList = Array.from({ length: NUMBER_OF_SETS_OF_COORDS }, generateRandomGeoCoordinates);
+import { generateRandomGeoCoordinates } from './utils';
+import { getSunsetSunrise } from './services/sunTime';
 
-coordsList.forEach(coords => {
-    console.log(coords);
-});
+const N_SETS_OF_COORDS = 10;
+const MAX_CONCURRENT_REQUESTS = 5;
+
+(async function init(): Promise<void> {
+    try {
+        const coordsList = Array.from({ length: N_SETS_OF_COORDS }, generateRandomGeoCoordinates);
+        const results = await async.mapLimit(coordsList, MAX_CONCURRENT_REQUESTS, async ({ coords }, next: Function) => {
+            try {
+                const result = await getSunsetSunrise(coords);
+                return next(null, { coords, ...result });
+            } catch (err) {
+                return next(err);
+            }
+        });
+    } catch (err) {
+        console.error(err);
+    }
+})();

@@ -9,7 +9,7 @@ export const isNumber = R.is(Number);
 /*
  * Validates if a value is a number
  */
-export const validateNumber = (value: unknown) => {
+export const validateNumber = (value: unknown): void => {
     if (!isNumber(value)) {
         throw new TypeError(`Value ${value} must be a number, got ${typeof(value)}`)
     }
@@ -19,7 +19,7 @@ export const validateNumber = (value: unknown) => {
 /*
  * validate if a number equals or is between min and max values
  */
-export const validateNumberBetween = (value: number, min: number, max: number) => {
+export const validateNumberBetween = (value: number, min: number, max: number): void => {
     validateNumber(value);
     if (value < min || value > max) {
         throw new RangeError(`value must be between ${min} and ${max}, got: ${value}`);
