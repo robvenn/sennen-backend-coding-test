@@ -10,6 +10,12 @@ class GeoCoordinates {
         this.lat = new Latitude_1.default(lat);
         this.long = new Longitude_1.default(long);
     }
+    get coords() {
+        return {
+            lat: this.lat,
+            long: this.long,
+        };
+    }
     toString() {
         return `{ lat: ${this.lat.toString()}, long: ${this.long.toString()} }`;
     }

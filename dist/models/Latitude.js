@@ -1,12 +1,11 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+const utils_1 = require("../utils");
 exports.LATITUDE_MIN_VALUE = -90;
 exports.LATITUDE_MAX_VALUE = 90;
 class Latitude {
     constructor(value) {
-        if (value < exports.LATITUDE_MIN_VALUE || value > exports.LATITUDE_MAX_VALUE) {
-            throw new RangeError(`value must be between ${exports.LATITUDE_MIN_VALUE} and ${exports.LATITUDE_MAX_VALUE}, got: ${value}`);
-        }
+        utils_1.validateNumberBetween(value, exports.LATITUDE_MIN_VALUE, exports.LATITUDE_MAX_VALUE);
         this.value = value;
     }
     toString() {

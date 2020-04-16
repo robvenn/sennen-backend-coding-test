@@ -1,3 +1,5 @@
+import { validateNumberBetween } from '../utils';
+
 export const LATITUDE_MIN_VALUE = -90;
 export const LATITUDE_MAX_VALUE = 90;
 
@@ -8,9 +10,7 @@ export default class Latitude {
     private value: number;
 
     constructor(value: number) {
-        if (value < LATITUDE_MIN_VALUE || value > LATITUDE_MAX_VALUE) {
-            throw new RangeError(`value must be between ${LATITUDE_MIN_VALUE} and ${LATITUDE_MAX_VALUE}, got: ${value}`);
-        }
+        validateNumberBetween(value, LATITUDE_MIN_VALUE, LATITUDE_MAX_VALUE);
         this.value = value;
     }
 
