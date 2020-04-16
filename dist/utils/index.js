@@ -1,5 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+var compare_1 = require("./compare");
+exports.getResultWithEarliestSunrise = compare_1.getResultWithEarliestSunrise;
 var geoCoordinates_1 = require("./geoCoordinates");
 exports.generateRandomGeoCoordinates = geoCoordinates_1.generateRandomGeoCoordinates;
 var numbers_1 = require("./numbers");

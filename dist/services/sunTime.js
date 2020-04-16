@@ -14,10 +14,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const axios_1 = __importDefault(require("axios"));
 const moment_1 = __importDefault(require("moment"));
+const dateAndTime_1 = require("../constants/dateAndTime");
 const API_DOMAIN = 'https://api.sunrise-sunset.org';
 const RES_SUCCESS_STATUS = 'OK';
-const TIME_OF_DAY_FORMAT = 'h:m:s A';
-const DURATION_FORMAT = 'H:m:s';
 exports.getSunsetSunrise = (coords) => __awaiter(void 0, void 0, void 0, function* () {
     const { lat, long } = coords;
     const { data: { results, status } } = yield axios_1.default.get(`${API_DOMAIN}/json?lat=${lat}&lng=${long}`);
@@ -25,9 +24,9 @@ exports.getSunsetSunrise = (coords) => __awaiter(void 0, void 0, void 0, functio
         throw new Error(`Failed fetching sunrise-sunset data for coords: ${coords.toString()}`);
     }
     return {
-        sunrise: moment_1.default(results.sunrise, TIME_OF_DAY_FORMAT),
-        sunset: moment_1.default(results.sunset, TIME_OF_DAY_FORMAT),
-        dayLength: moment_1.default(results.day_length, DURATION_FORMAT),
+        sunrise: moment_1.default(results.sunrise, dateAndTime_1.TIME_OF_DAY_FORMAT),
+        sunset: moment_1.default(results.sunset, dateAndTime_1.TIME_OF_DAY_FORMAT),
+        dayLength: moment_1.default(results.day_length, dateAndTime_1.DURATION_FORMAT),
     };
 });
 //# sourceMappingURL=sunTime.js.map
